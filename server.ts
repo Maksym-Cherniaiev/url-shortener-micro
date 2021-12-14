@@ -1,11 +1,13 @@
 import express from 'express';
 import url from 'url';
+import dotenv from 'dotenv'
 
 import helmet from 'helmet';
 import { saveShortenedUrl, getFullUrlByParam } from './database/pg-database';
 import { postUrlSchema, getUrlSchema, validationOptions } from './helpers/validatePostParams';
 
 
+dotenv.config();
 const app = express();
 
 app.use(helmet());
@@ -41,6 +43,6 @@ app.post('/', async (request: express.Request, response: express.Response) => {
 	} 
 });
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
 	console.warn('> Ready on http://localhost:8000');
 });

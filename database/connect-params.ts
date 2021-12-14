@@ -1,7 +1,7 @@
 export const connectParams = {
-	host: 'localhost',
-	user: 'likeran',
+	host: process.env.HOST || 'localhost',
+	user: process.env.USER || 'likeran',
 	port: 5432,
-	password: 'password',
-	database: 'postgres'
+	password: process.env.PASS || 'password',
+	database: process.env.DB || 'postgres'
 };
