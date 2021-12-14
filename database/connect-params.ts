@@ -4,8 +4,8 @@ dotenv.config();
 
 export const connectParams = {
 	host: process.env.HOST || 'localhost',
-	user: process.env.USER || 'postgres',
+	user: process.env.USERNAME || 'postgres',
 	port: 5432,
-	password: process.env.PASS || 'password',
+	password: process.env.PASSWORD || 'password',
 	database: process.env.DB || 'postgres'
 };
